@@ -24,7 +24,7 @@ function AjoutCategorie() {
         return;
       }
       
-       await axios.post('http://localhost:8080/api/v1/categories', {
+       await axios.post(`http://${ process.env.REACT_APP_API }/api/v1/categories`, {
         category
       }, {
         headers: {

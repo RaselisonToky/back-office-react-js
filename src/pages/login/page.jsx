@@ -18,7 +18,7 @@ function Login() {
 
   const click = async () => {
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/auth/login', {
+      const response = await axios.post(`http://${ process.env.REACT_APP_API }/api/v1/auth/login`, {
         email: email,
         password: password
       });

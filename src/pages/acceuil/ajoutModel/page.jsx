@@ -32,7 +32,7 @@ function AjoutModel() {
       }
     };
   
-    axios.get('http://localhost:8080/api/v1/brand', axiosConfig)
+    axios.get(`http://${ process.env.REACT_APP_API }/api/v1/brand`, axiosConfig)
       .then(response => setBrands(response.data))
       .catch(error => console.error('Erreur lors de la récupération des bouquets', error));
   }, []);
@@ -50,7 +50,7 @@ function AjoutModel() {
       }
     };
   
-    axios.get('http://localhost:8080/api/v1/categories', axiosConfig)
+    axios.get(`http://${ process.env.REACT_APP_API }/api/v1/categories`, axiosConfig)
       .then(response => setCategories(response.data))
       .catch(error => console.error('Erreur lors de la récupération des bouquets', error));
   }, []);
@@ -78,7 +78,7 @@ function AjoutModel() {
         return;
       }
       
-       await axios.post('http://localhost:8080/api/v1/models', {
+       await axios.post(`http://${ process.env.REACT_APP_API }/api/v1/models`, {
         brand: selectedBrand.value,
         model: model,
         category: selectedCategorie.value
