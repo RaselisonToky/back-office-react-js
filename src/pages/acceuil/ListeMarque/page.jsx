@@ -47,8 +47,7 @@ function ListeMarque() {
     axios.delete(`http://${process.env.REACT_APP_API}/api/v1/brand/delete?id_brand=${id_brand}`, axiosConfig)
       .then(response => {
         toast.success("Suppression Effectué")
-        window.location.reload();
-
+        setBrand(prevBrands => prevBrands.filter(brand => brand.id_brand !== id_brand));
       })
       .catch(error => {
         toast.error("Suppression Echoué")

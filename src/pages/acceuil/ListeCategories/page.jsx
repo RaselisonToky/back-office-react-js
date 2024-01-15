@@ -47,8 +47,7 @@ function ListeCategories() {
     axios.delete(`http://${process.env.REACT_APP_API}/api/v1/categories/delete?id_category=${id_category}`, axiosConfig)
       .then(response => {
         toast.success("Suppression Effectué")
-        window.location.reload();
-
+        setCategories(prevBrands => prevBrands.filter(categories => categories.id_category !== id_category));
       })
       .catch(error => {
         toast.error("Suppression Echoué")
