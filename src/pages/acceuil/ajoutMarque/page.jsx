@@ -6,6 +6,7 @@ import Bouton from "../../../components/Bouton"
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom'; 
 
 
 
@@ -60,6 +61,9 @@ function AjoutMarque() {
           </div>
           <div className={styles.bouton}>
             <Bouton  variant={"contained"} designation={"Ajouter une nouvelle marque"} onClick={click} />
+          </div>
+          <div className={styles.l} >
+              <Link className={styles.phrase} to="/listeMarque">Aller à la liste des Marques ?</Link>
           </div>
       </div>
     <ToastContainer/>

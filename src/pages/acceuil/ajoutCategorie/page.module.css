@@ -24,4 +24,13 @@
 .input{
     margin-top: 50px;
 }
-
+.l{
+    margin-top: 20px;
+}
+.phrase {
+    color: #396987; 
+    cursor: pointer;
+    font-weight: 700;
+    font-family: inherit;
+    text-decoration: none;
+  }

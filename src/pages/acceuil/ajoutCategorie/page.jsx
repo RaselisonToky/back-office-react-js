@@ -6,6 +6,7 @@ import Bouton from "../../../components/Bouton"
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom'; 
 
 
 
@@ -59,6 +60,9 @@ function AjoutCategorie() {
           </div>
           <div className={styles.bouton}>
             <Bouton  variant={"contained"} designation={"Ajouter une nouvelle categorie"} onClick={click} />
+          </div>
+          <div className={styles.l} >
+            <Link className={styles.phrase} to="/listeCategories">Aller à la liste des Catégories ?</Link>
           </div>
       </div>
     <ToastContainer/>

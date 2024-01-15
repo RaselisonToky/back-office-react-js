@@ -5,7 +5,8 @@ import AjoutMarque from "./pages/acceuil/ajoutMarque/page";
 import AjoutCategorie from "./pages/acceuil/ajoutCategorie/page";
 import Login from "./pages/login/page"
 import AjoutModel from "./pages/acceuil/ajoutModel/page"
-
+import ListeMarque from "./pages/acceuil/ListeMarque/page"
+import ListeCategories from './pages/acceuil/ListeCategories/page';
 
 
 
@@ -21,6 +22,8 @@ function App() {
           <Route path="/ajoutCategorie" element={<AjoutCategorie />} /> 
           <Route path="/login" element={<Login />} /> 
           <Route path="/ajoutModel" element={<AjoutModel />} /> 
+          <Route path="/listeMarque" element={<ListeMarque />} /> 
+          <Route path="/listeCategories" element={<ListeCategories />} /> 
 
         </Routes>
       </div>
