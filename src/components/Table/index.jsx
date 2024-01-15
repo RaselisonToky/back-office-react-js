@@ -28,7 +28,13 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-export default function CustomizedTables({ columns, data }) {
+export default function CustomizedTables({ columns, data , onRowClick}) {
+  const [selectedRow, setSelectedRow] = React.useState(null);
+
+  const handleRowClick = (index) => {
+    setSelectedRow(index);
+    onRowClick(data[index]); // Passez l'objet de données à la fonction parent
+  };
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -43,7 +49,7 @@ export default function CustomizedTables({ columns, data }) {
         </TableHead>
         <TableBody>
           {data.map((row, index) => (
-            <StyledTableRow key={index}>
+            <StyledTableRow key={index} onClick={() => handleRowClick(index)}>
                 {columns.map((column, columnIndex) => (
                     <StyledTableCell key={column} align={columnIndex === 0 ? "left" : "right"}>
                     {row[column.toLowerCase()]}
