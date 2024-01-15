@@ -7,7 +7,7 @@ import Login from "./pages/login/page"
 import AjoutModel from "./pages/acceuil/ajoutModel/page"
 import ListeMarque from "./pages/acceuil/ListeMarque/page"
 import ListeCategories from './pages/acceuil/ListeCategories/page';
-
+import ListeModel from './pages/acceuil/ListeModel/page'
 
 
 
@@ -24,6 +24,7 @@ function App() {
           <Route path="/ajoutModel" element={<AjoutModel />} /> 
           <Route path="/listeMarque" element={<ListeMarque />} /> 
           <Route path="/listeCategories" element={<ListeCategories />} /> 
+          <Route path="/listeModel" element={<ListeModel />} /> 
 
         </Routes>
       </div>
