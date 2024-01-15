@@ -1,0 +1,60 @@
+.container{
+    max-width: 400px;
+    margin: auto;
+    padding: 60px;
+    margin-top: 40px;
+    border: 1px solid;
+    border-color: #c2dde8;
+    background-color: #f5fafd;
+    height: 400px;
+}
+
+
+.inputcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 620px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+
+
+
+.titre{
+    color: #0d4f78;
+    font-size: 22px;
+    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 30px;
+  }
+  
+  .label {
+    margin-bottom: 5px; 
+    margin-top: 10px;
+    font-weight: bold;
+    color: #3a3a3a;
+  }
+
+  .form{
+      max-width: 400px;
+  }
+
+
+.bouton{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
