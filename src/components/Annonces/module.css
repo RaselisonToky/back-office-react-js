@@ -1,0 +1,85 @@
+.image{
+    width: 250px;
+    height: 150px;
+    background-color: black;
+}
+
+.car-ad{
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid;
+    padding: 20px;
+    border-color: rgb(211, 211, 211);
+}
+.titre{
+    color: #0d4f78;
+    font-size: 20px;
+    font-weight: 700;
+    font-family:inherit;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.sup{
+    color: rgb(238, 141, 141);
+}
+
+.sup:hover{
+    color:rgb(203, 70, 70) ;
+}
+.aligner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.boutonvalidate{
+    width: 80px;
+    color: white;
+    background-color: #f37121;
+    padding: 5px;
+    border: none;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+.boutonvalidate:hover{
+    background-color: #c34b00;
+}
+.description{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.ngezabe{
+    width: 80%;
+}
+
+.phrase{
+    padding-top: 10px;
+    font-size: 12px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.logo{
+    color: orange;
+}
+.price{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+
+.prix{
+    color: #0d4f78;
+    font-size: 18px;
+    font-weight: 700;
+
+
+}
+
+.validate{
+    color: rgb(3, 228, 3);
+    font-size: 12px;
+}
