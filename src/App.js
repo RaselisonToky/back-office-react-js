@@ -9,7 +9,7 @@ import ListeMarque from "./pages/acceuil/listeMarque/page"
 import ListeCategories from './pages/acceuil/listeCategories/page';
 import ListeModel from './pages/acceuil/listeModel/page'
 import ListeAnnonces from './pages/acceuil/listeAnnonces/page'
-
+import Dashboard  from './pages/dashboard/page';
 
 
 
@@ -28,6 +28,7 @@ function App() {
           <Route path="/listeCategories" element={<ListeCategories />} /> 
           <Route path="/listeModel" element={<ListeModel />} /> 
           <Route path="/annonces" element={<ListeAnnonces />} /> 
+          <Route path="/dashboard" element={<Dashboard />} /> 
 
         </Routes>
       </div>
