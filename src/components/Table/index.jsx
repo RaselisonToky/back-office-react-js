@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Pagination from '@mui/material/Pagination';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -28,37 +29,58 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-export default function CustomizedTables({ columns, data , onRowClick}) {
+export default function CustomizedTables({ columns, data, onRowClick }) {
   const [selectedRow, setSelectedRow] = React.useState(null);
+  const [page, setPage] = React.useState(1);
+  const rowsPerPage = 10;
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
 
   const handleRowClick = (index) => {
-    setSelectedRow(index);
-    onRowClick(data[index]); // Passez l'objet de données à la fonction parent
+    const dataIndex = (page - 1) * rowsPerPage + index;
+    setSelectedRow(dataIndex);
+    onRowClick(data[dataIndex]);
   };
+
+  const startIndex = (page - 1) * rowsPerPage;
+  const endIndex = startIndex + rowsPerPage;
+  const displayedData = data.slice(startIndex, endIndex);
+
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            {columns.map((column, index) => (
+    <div>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 700 }} aria-label="customized table">
+          <TableHead>
+            <TableRow>
+              {columns.map((column, index) => (
                 <StyledTableCell key={column} align={index === 0 ? "left" : "right"}>
-                {column}
+                  {column}
                 </StyledTableCell>
-            ))}
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {data.map((row, index) => (
-            <StyledTableRow key={index} onClick={() => handleRowClick(index)}>
+              ))}
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {displayedData.map((row, index) => (
+              <StyledTableRow key={index} onClick={() => handleRowClick(index)}>
                 {columns.map((column, columnIndex) => (
-                    <StyledTableCell key={column} align={columnIndex === 0 ? "left" : "right"}>
+                  <StyledTableCell key={column} align={columnIndex === 0 ? "left" : "right"}>
                     {row[column.toLowerCase()]}
-                    </StyledTableCell>
+                  </StyledTableCell>
                 ))}
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+              </StyledTableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <Pagination
+        count={Math.ceil(data.length / rowsPerPage)}
+        page={page}
+        onChange={handleChangePage}
+        sx={{ marginTop: 2, alignSelf: 'center' }}
+      />
+    </div>
   );
 }
+

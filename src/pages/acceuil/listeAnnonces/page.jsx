@@ -3,6 +3,10 @@ import Header from "../../../components/Header";
 import Annonce from "../../../components/Annonces"
 import styles from "./page.module.css"
 import axios from 'axios';
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
+import { padding } from '@mui/system';
+
 
 function ListeAnnonce() {
     let [annonces, setAnnonces]= useState([]);
@@ -21,25 +25,8 @@ function ListeAnnonce() {
     
       }, []);
 
-
-      useEffect (()=>{
-        console.log(annonces)
-      })
-    
       const handleDelete = (annonceId) => {
-        // const token = localStorage.getItem('token');
-        // const axiosConfig = {
-        //     headers: {
-        //         'Authorization': 'Bearer ' + token
-        //     }
-        // };
 
-        // axios.delete(`http://${process.env.REACT_APP_API}/api/v1/announces/${annonceId}`, axiosConfig)
-        //     .then(response => {
-        //         setAnnonces(prevAnnonces => prevAnnonces.filter(annonce => annonce.id !== annonceId));
-        //         console.log('Annonce supprimée avec succès');
-        //     })
-        //     .catch(error => console.error('Erreur lors de la suppression de l\'annonce', error));
     };
 
     const handleValidation = (annonceId) => {
@@ -66,18 +53,34 @@ function ListeAnnonce() {
   };
   
 
-    
+        const [page, setPage] = useState(1);
+        const annoncesPerPage = 5;
+
+        const handleChangePage = (event, value) => {
+            setPage(value);
+        };
+
+        const startIndex = (page - 1) * annoncesPerPage;
+        const endIndex = startIndex + annoncesPerPage;
+        const displayedAnnonces = annonces.slice(startIndex, endIndex);
     
 
   return (
-      <div>
-          <Header />
-          <div className={styles.container}>
-                {annonces.map((annonce, index) => (
-                    <Annonce key={index} annonce={annonce} onDelete={handleDelete}  onValidation={handleValidation}/>
-                ))}
-            </div>
-      </div>
+    <div>
+    <Header />
+    <div className={styles.container}>
+      {displayedAnnonces.map((annonce, index) => (
+        <Annonce key={index} annonce={annonce} onDelete={handleDelete} onValidation={handleValidation} />
+      ))}
+       <Pagination
+        count={Math.ceil(annonces.length / annoncesPerPage)}
+        page={page}
+        onChange={handleChangePage}
+        sx={{ marginTop: 2, alignSelf: 'center' }}
+      />
+    </div>
+     
+  </div>
 
   );
 }

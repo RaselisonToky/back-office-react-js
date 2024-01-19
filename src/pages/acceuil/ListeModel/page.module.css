@@ -2,9 +2,9 @@
     margin: auto; 
     width: 50%; 
     padding: 20px; 
+    max-height: 800px;
   }
   .cm {
-    position: fixed;
     background-color: #fff;
     border: 1px solid #ccc;
     padding: 10px;
@@ -17,6 +17,9 @@
     display: flex;
     gap: 10px;
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .cmo button {
@@ -27,6 +30,7 @@
     cursor: pointer;
     font-size: 14px;
     width: 100px;
+
   }
   
   .cmo button:hover {
