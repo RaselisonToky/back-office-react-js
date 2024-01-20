@@ -19,7 +19,7 @@ function ListeModel() {
       }
     };
 
-    axios.get(`http://${ process.env.REACT_APP_API }/api/v1/models`, axiosConfig)
+    axios.get(`${ process.env.REACT_APP_API }/api/v1/models`, axiosConfig)
       .then(response => setModels(response.data))
       .catch(error => console.error('Erreur lors de la récupération des bouquets', error));
   }, []);
@@ -45,7 +45,7 @@ function ListeModel() {
       },
     };
 
-    axios.delete(`http://${process.env.REACT_APP_API}/api/v1/models/delete?id_model=${id_model}`, axiosConfig)
+    axios.delete(`${process.env.REACT_APP_API}/api/v1/models/delete?id_model=${id_model}`, axiosConfig)
       .then(response => {
         toast.success("Suppression Effectué")
         setModels(prevBrands => prevBrands.filter(models => models.id_model !== id_model));

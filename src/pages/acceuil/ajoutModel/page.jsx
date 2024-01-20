@@ -8,6 +8,7 @@ import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom'; 
+import Footer from '../../../components/Footer';
 
 
 
@@ -33,7 +34,7 @@ function AjoutModel() {
       }
     };
   
-    axios.get(`http://${ process.env.REACT_APP_API }/api/v1/brand`, axiosConfig)
+    axios.get(`${ process.env.REACT_APP_API }/api/v1/brand`, axiosConfig)
       .then(response => setBrands(response.data))
       .catch(error => console.error('Erreur lors de la récupération des bouquets', error));
   }, []);
@@ -51,7 +52,7 @@ function AjoutModel() {
       }
     };
   
-    axios.get(`http://${ process.env.REACT_APP_API }/api/v1/categories`, axiosConfig)
+    axios.get(`${ process.env.REACT_APP_API }/api/v1/categories`, axiosConfig)
       .then(response => setCategories(response.data))
       .catch(error => console.error('Erreur lors de la récupération des bouquets', error));
   }, []);
@@ -79,7 +80,7 @@ function AjoutModel() {
         return;
       }
       
-       await axios.post(`http://${ process.env.REACT_APP_API }/api/v1/models`, {
+       await axios.post(`${ process.env.REACT_APP_API }/api/v1/models`, {
         brand: selectedBrand.value,
         model: model,
         category: selectedCategorie.value
@@ -104,7 +105,7 @@ function AjoutModel() {
 
 
   return (
-    <div>
+    <div className={styles.c}>
       <div>
         <Header/>
       </div>
@@ -148,6 +149,7 @@ function AjoutModel() {
               <Link className={styles.phrase} to="/listeModel">Aller à la liste des Models ?</Link>
           </div>
       </div>
+      <Footer/>
     <ToastContainer/>
     </div>
 

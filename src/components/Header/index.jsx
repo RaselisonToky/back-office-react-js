@@ -10,6 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import { useNavigate } from 'react-router-dom';
 
 const pages = [
   { label: 'Dashboard', link: '/dashboard' },
@@ -21,6 +22,7 @@ const pages = [
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -31,8 +33,7 @@ function ResponsiveAppBar() {
   };
 
   const handleLogout = () => {
-    // Add your logout logic here
-    console.log('Logging out...');
+    navigate('/login')
   };
 
   return (

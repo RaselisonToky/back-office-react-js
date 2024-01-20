@@ -18,7 +18,7 @@ function ListeCategories() {
       }
     };
 
-    axios.get(`http://${ process.env.REACT_APP_API }/api/v1/categories`, axiosConfig)
+    axios.get(`${ process.env.REACT_APP_API }/api/v1/categories`, axiosConfig)
       .then(response => setCategories(response.data))
       .catch(error => console.error('Erreur lors de la récupération des bouquets', error));
   }, []);
@@ -44,7 +44,7 @@ function ListeCategories() {
       },
     };
 
-    axios.delete(`http://${process.env.REACT_APP_API}/api/v1/categories/delete?id_category=${id_category}`, axiosConfig)
+    axios.delete(`${ process.env.REACT_APP_API }/api/v1/categories/delete?id_category=${id_category}`, axiosConfig)
       .then(response => {
         toast.success("Suppression Effectué")
         setCategories(prevBrands => prevBrands.filter(categories => categories.id_category !== id_category));

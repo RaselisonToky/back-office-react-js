@@ -18,7 +18,7 @@ function ListeMarque() {
       }
     };
 
-    axios.get(`http://${ process.env.REACT_APP_API }/api/v1/brand`, axiosConfig)
+    axios.get(`${ process.env.REACT_APP_API }/api/v1/brand`, axiosConfig)
       .then(response => setBrand(response.data))
       .catch(error => console.error('Erreur lors de la récupération des bouquets', error));
   }, []);
@@ -44,7 +44,7 @@ function ListeMarque() {
       },
     };
 
-    axios.delete(`http://${process.env.REACT_APP_API}/api/v1/brand/delete?id_brand=${id_brand}`, axiosConfig)
+    axios.delete(`${process.env.REACT_APP_API}/api/v1/brand/delete?id_brand=${id_brand}`, axiosConfig)
       .then(response => {
         toast.success("Suppression Effectué")
         setBrand(prevBrands => prevBrands.filter(brand => brand.id_brand !== id_brand));

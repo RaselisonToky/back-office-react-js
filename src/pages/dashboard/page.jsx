@@ -14,7 +14,7 @@ const App = () => {
       }
     };
 
-    axios.get(`http://${ process.env.REACT_APP_API }/api/v1/annonce-par-mois`, axiosConfig)
+    axios.get(`${ process.env.REACT_APP_API }/api/v1/annonce-par-mois`, axiosConfig)
       .then(response =>  setApiData(response.data))
       .catch(error => console.error('Erreur lors de la récupération des bouquets', error));
   }, []);

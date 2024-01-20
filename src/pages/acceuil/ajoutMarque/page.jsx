@@ -7,7 +7,7 @@ import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom'; 
-
+import Footer from "../../../components/Footer"
 
 
 
@@ -25,7 +25,7 @@ function AjoutMarque() {
         return;
       }
       
-       await axios.post(`http://${ process.env.REACT_APP_API }/api/v1/brand`, {
+       await axios.post(`${ process.env.REACT_APP_API }/api/v1/brand`, {
         brand
       }, {
         headers: {
@@ -48,7 +48,7 @@ function AjoutMarque() {
 
 
   return (
-    <div>
+    <div className={styles.c}>
       <div>
         <Header/>
       </div>
@@ -66,6 +66,7 @@ function AjoutMarque() {
               <Link className={styles.phrase} to="/listeMarque">Aller à la liste des Marques ?</Link>
           </div>
       </div>
+      <Footer/>
     <ToastContainer/>
     </div>
 

@@ -1,12 +1,18 @@
+
+.c {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
 .container{
     max-width: 400px;
     margin: auto;
     padding: 60px;
-    margin-top: 40px;
+    margin-top: 60px;
     border: 1px solid;
-    border-color: #c2dde8;
+    border-color: #bdddea;
     background-color: #f5fafd;
-    height: 400px;
 }
 
 
@@ -19,8 +25,9 @@
     margin-top: 30px;
 }
 
-
-
+.footercontainer {
+    flex-shrink: 0; 
+  }
 
 .titre{
     color: #0d4f78;
@@ -36,6 +43,12 @@
     align-items: flex-start;
     margin-top: 30px;
   }
+
+  .input input{
+    background-color: white;
+
+  }
+
   
   .label {
     margin-bottom: 5px; 

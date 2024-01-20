@@ -7,7 +7,7 @@ import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom'; 
-
+import Footer from "../../../components/Footer"
 
 
 
@@ -25,7 +25,7 @@ function AjoutCategorie() {
         return;
       }
       
-       await axios.post(`http://${ process.env.REACT_APP_API }/api/v1/categories`, {
+       await axios.post(`${process.env.REACT_APP_API}/api/v1/categories`, {
         category
       }, {
         headers: {
@@ -47,7 +47,7 @@ function AjoutCategorie() {
 
 
   return (
-    <div>
+    <div className={styles.c}>
       <div>
         <Header/>
       </div>
@@ -65,6 +65,7 @@ function AjoutCategorie() {
             <Link className={styles.phrase} to="/listeCategories">Aller à la liste des Catégories ?</Link>
           </div>
       </div>
+      <Footer/>
     <ToastContainer/>
     </div>
 
