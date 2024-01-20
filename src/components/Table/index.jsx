@@ -31,17 +31,18 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 export default function CustomizedTables({ columns, data, onRowClick }) {
+// eslint-disable-next-line no-unused-vars
   const [selectedRow, setSelectedRow] = React.useState(null);
   const [page, setPage] = React.useState(1);
-  const [loading, setLoading] = React.useState(true); // Nouvel état pour indiquer le chargement
+  const [loading, setLoading] = React.useState(true); 
   const rowsPerPage = 10;
 
   React.useEffect(() => {
-    // Simulez un délai de chargement avec setTimeout
+
     setTimeout(() => {
-      setLoading(false); // Mettez à jour l'état pour indiquer que le chargement est terminé
-    }, 2000); // Temps de chargement simulé (2 secondes)
-  }, []); // Exécutez cet effet uniquement lors du montage initial
+      setLoading(false);
+    }, 2000); 
+  }, []); 
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
