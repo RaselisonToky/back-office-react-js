@@ -3,16 +3,13 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import AjoutMarque from "./pages/acceuil/ajoutMarque/page";
 import AjoutCategorie from "./pages/acceuil/ajoutCategorie/page";
-import Login from "./pages/login/page"
-import AjoutModel from "./pages/acceuil/ajoutModel/page"
-import ListeMarque from "./pages/acceuil/listeMarque/page"
-import ListeCategories from './pages/acceuil/listeCategories/page';
-import ListeModel from './pages/acceuil/listeModel/page'
-import ListeAnnonces from './pages/acceuil/listeAnnonces/page'
-import Dashboard  from './pages/dashboard/page';
-
-
-
+import Login from "./pages/login/page";
+import AjoutModel from "./pages/acceuil/ajoutModel/page";
+import ListeMarque from "./pages/acceuil/ListeMarque/page";
+import ListeCategories from './pages/acceuil/ListeCategories/page';
+import ListeModel from './pages/acceuil/ListeModel/page';
+import ListeAnnonces from './pages/acceuil/listeAnnonces/page';
+import Dashboard from './pages/dashboard/page';
 
 function App() {
   return (
@@ -29,7 +26,6 @@ function App() {
           <Route path="/listeModel" element={<ListeModel />} /> 
           <Route path="/annonces" element={<ListeAnnonces />} /> 
           <Route path="/dashboard" element={<Dashboard />} /> 
-
         </Routes>
       </div>
     </Router>
