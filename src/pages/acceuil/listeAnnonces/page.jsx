@@ -37,9 +37,27 @@ function ListeAnnonce() {
   };
 
   const handleValidation = (annonceId) => {
-    // Logique de validation de l'annonce
-  };
+    const token = localStorage.getItem('token');
+    const axiosConfig = {
+        headers: {
+            'Authorization': 'Bearer ' + token
+        }
+    };
 
+    axios.get(`${process.env.REACT_APP_API}/api/v1/announces/${annonceId}/validate`, axiosConfig)
+        .then(response => {
+            // Mettez à jour l'état des annonces après la validation
+            setAnnonces(prevAnnonces => prevAnnonces.map(annonce => {
+                if (annonce.id === annonceId) {
+                    return { ...annonce, status: 10 }; // Supposons que le statut 1 représente "validé"
+                } else {
+                    return annonce;
+                }
+            }));
+            console.log('Annonce validée avec succès');
+        })
+        .catch(error => console.error('Erreur lors de la validation de l\'annonce', error));
+};
   const handleChangePage = (event, value) => {
     setPage(value);
   };
