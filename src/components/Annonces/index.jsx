@@ -29,14 +29,14 @@ class Annonce extends Component {
           <div className="ngezabe">
             <div className="aligner">
               <div className="titre">
-                  {annonce.idCarAnnounce.idCar.idModel.brand.brand +" "+annonce.idCarAnnounce.idCar.idModel.model +" "+annonce.idCarAnnounce.idCar.idModel.category.category }
+                  {annonce.car.model.brand.brand +" "+annonce.car.model.model +" "+annonce.car.category.category }
               </div>
               <div className="sup" onClick={this.handleDelete}>
                 <i className="fas fa-trash-alt"></i>
               </div>
             </div>
 
-                <div className="description">{annonce.idCarAnnounce.manufacturingYear +" | "+ annonce.idCarAnnounce.mileAge +" Km "} </div>
+                <div className="description">{annonce.car.mileAge +" Km "} </div>
                 <div className="phrase">{annonce.description}</div>
                 <div className="price">
                   <div className="logo">

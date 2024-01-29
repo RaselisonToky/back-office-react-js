@@ -18,7 +18,7 @@ function ListeMarque() {
       }
     };
 
-    axios.get(`${ process.env.REACT_APP_API }/api/v1/brand`, axiosConfig)
+    axios.get(`${ process.env.REACT_APP_API }/api/v1/brand/2`, axiosConfig)
       .then(response => setBrand(response.data))
       .catch(error => console.error('Erreur lors de la récupération des bouquets', error));
   }, []);
