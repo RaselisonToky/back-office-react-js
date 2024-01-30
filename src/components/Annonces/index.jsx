@@ -42,7 +42,8 @@ class Annonce extends Component {
                   <div className="logo">
                        { (annonce.status === 0) ? <div>
                          <button className="boutonvalidate" onClick={this.handleValidation}>Validé ?</button>
-                       </div> : <span className="validate"> <i className="fas fa-circle"></i></span>} 
+                       </div> : <span className="validate"> <i className="fas fa-circle"></i></span>
+                       } 
                   </div>
                   <div className="prix">
                     {annonce.sellingPrice + " £"}

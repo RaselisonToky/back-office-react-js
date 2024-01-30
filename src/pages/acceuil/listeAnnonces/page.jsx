@@ -46,7 +46,6 @@ function ListeAnnonce() {
 
     axios.get(`${process.env.REACT_APP_API}/api/v1/announces/${annonceId}/validate`, axiosConfig)
         .then(response => {
-            // Mettez à jour l'état des annonces après la validation
             setAnnonces(prevAnnonces => prevAnnonces.map(annonce => {
                 if (annonce.id === annonceId) {
                     return { ...annonce, status: 10 }; // Supposons que le statut 1 représente "validé"
@@ -74,7 +73,7 @@ function ListeAnnonce() {
           <CircularProgress sx={{ alignSelf: 'center', marginTop: 2 }} /> // Affichez le spinner de chargement
         ) : (
           <>
-            {displayedAnnonces.map((annonce, index) => (
+            {displayedAnnonces.map((annonce, index) => ( (annonce.status === -10) &&
               <Annonce key={index} annonce={annonce} onDelete={handleDelete} onValidation={handleValidation} />
             ))}
             <div className={styles.pagination}>
