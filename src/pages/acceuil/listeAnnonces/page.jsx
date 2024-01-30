@@ -73,7 +73,7 @@ function ListeAnnonce() {
           <CircularProgress sx={{ alignSelf: 'center', marginTop: 2 }} /> // Affichez le spinner de chargement
         ) : (
           <>
-            {displayedAnnonces.map((annonce, index) => ( (annonce.status === -10) &&
+            {displayedAnnonces.map((annonce, index) => ( (annonce.status >= 0) &&
               <Annonce key={index} annonce={annonce} onDelete={handleDelete} onValidation={handleValidation} />
             ))}
             <div className={styles.pagination}>
