@@ -60,7 +60,7 @@ function ListeModel() {
   const data = models.map(item => ({
     id_model: item.id_model,
     brand: item.brand.brand,
-    category: item.category.category,
+    category: item.categories.category,
     model: item.model
   }));
 
